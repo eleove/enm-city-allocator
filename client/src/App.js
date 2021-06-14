@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+const fetchDataTests = () => {
+  fetch('/api/v1/tests')
+  .then(res => res.json())
+  .then((response) => { console.log("Test data response", response); })
+  .catch((error) => { console.log("Error while fetching data tests", error); })
+}
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={fetchDataTests}> Fetch data tests </button>
     </div>
   );
 }
