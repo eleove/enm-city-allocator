@@ -68,6 +68,8 @@ GEM
     crass (1.0.6)
     csv (3.1.9)
     erubi (1.10.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.1)
     foreman (0.87.2)
     globalid (0.4.2)
@@ -150,6 +152,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   csv
+  faker
   foreman
   listen (~> 3.3)
   puma (~> 5.0)
