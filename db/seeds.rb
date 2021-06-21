@@ -1,4 +1,5 @@
 require 'csv'
+require 'faker'
 
 City.all.destroy_all
 
@@ -10,3 +11,13 @@ CSV.foreach(source_file) do |row|
 		nb_seats: row[2]
 		)
 end
+
+Student.all.destroy_all
+
+Student.create(name: "Anna Thuleau")
+
+335.times {
+	Student.create!(
+	name: Faker::Name.unique.name
+	)
+}
