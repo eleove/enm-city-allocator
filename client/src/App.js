@@ -13,7 +13,7 @@ const fetchDataTests = () => {
 
 const App = () => {
   return (
-    <div className="App">  
+    <div className="App">
       <h1> ENM CITY ALLOCATOR </h1>
     </div>
   );
