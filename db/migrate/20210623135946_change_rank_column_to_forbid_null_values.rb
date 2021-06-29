@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ChangeRankColumnToForbidNullValues < ActiveRecord::Migration[6.1]
   def change
-  	change_column :choices, :rank, :integer, null: false
+    change_column :choices, :rank, :integer, null: false
   end
 end
