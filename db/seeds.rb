@@ -13,7 +13,7 @@ CSV.foreach(source_file, headers: true) do |row|
   City.create!(
     name: row[0],
     nb_seats: row[1],
-    wishes: [row[2], row[3], row[4], row[5], row[6], row[7]].map(&:to_i)
+    wishes: row[2..7].map(&:to_i)
   )
 end
 
