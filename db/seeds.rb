@@ -33,7 +33,7 @@ end
 
 Choice.find_each(&:destroy!)
 
-City.order("nb_seats DESC").all.each do |city|
+City.order(nb_seats: :desc).find_each do |city|
   city.wishes.each_with_index do |wish, ind|
     # next if wish.zero?
 
