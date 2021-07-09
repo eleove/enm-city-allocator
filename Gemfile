@@ -28,6 +28,7 @@ gem 'csv'
 gem 'faker'
 gem 'pre-commit'
 gem 'rubocop'
+gem 'webpacker'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
