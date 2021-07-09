@@ -3,47 +3,18 @@
 # this has to be launched in the console with load 'app/services/allocator_script.rb'
 
 # best practice Pierre: declare a class and then launch the method on the class
-# you shouldn't have methods not inside a class
+# (you shouldn't have methods not inside a class)
 
-#############################
-###### FIRST METHOD #########
-#############################
+# the methods I considered at first are not working / are not efficient at all
+# indeed, by granting all first choices that are not disputed, we only allocate a city to 3 students
+# for 1st + 2nd non-disputed choices, we allocate 4 cities...
 
-# STEP #1 - grant all first choices that are not disputed
+# NEXT
+# this problem can be solved with a 'minimum cost maximum flow' algorithm with a graph library
+# Python has a library for this (networkx), currently investigating with Arnaud
+# I couldn't find the equivalent in Ruby. Relax4 seems to be an option but it's not enough documented
+# I started digging into it in the min_cost_flow file (not finished)
 
-# SELECT cities.name, cities.nb_seats, count(choices.id)
-# FROM cities INNER JOIN choices ON cities.id = choices.city_id
-# WHERE choices.rank = 1
-# GROUP BY cities.name, cities.nb_seats;
-
-p Choice.all.count
-grantable_first_choices = Choice.all.select { |choice| choice.rank == 1 }
-p grantable_first_choices.size
-
-# STEP #2 - do the same for second to last choices
-
-# STEP #3 - Use brute force for remanining possibilites
-
-#############################
-###### SECOND METHOD ########
-#############################
-
-# brute force only (see if it crashes)
-
-#############################
-######  THIRD METHOD ########
-#############################
-
-# STEP #1 - grant all first choices that are not disputed
-
-# STEP #2 - do the same for second to last choices
-
-# STEP #3 - rank remaining students
-# a student has a high rank if he/she asked for cities that many people asked for.
-# As these students run the risk of having a consequent impact on the sum of distances, we give them in priority one of their first choices
-
-#############################
-######  FOURTH METHOD #######
-#############################
-
-# think about other ways to allocate cities (apart from steps #1 & #2)
+# Reminder: other methods that were to be investigated
+# compute the number of possibilities with brute force to see if this could be considered
+# rank students (according to the total 'weight' of their wishes) & cities (according to the weighted average of wishes it has)
