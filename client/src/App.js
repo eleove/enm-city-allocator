@@ -9,10 +9,12 @@ const fetchDataTests = () => {
   .catch((error) => { console.log("Error while fetching data tests", error); })
 }
 
+// <button onClick={fetchDataTests}> Fetch data tests </button>
+
 const App = () => {
   return (
     <div className="App">
-      <button onClick={fetchDataTests}> Fetch data tests </button>
+      <h1> ENM CITY ALLOCATOR </h1>
     </div>
   );
 }
