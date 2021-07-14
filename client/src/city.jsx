@@ -12,4 +12,4 @@ class City extends Component {
 	}
 }
 
-export default City;	
+export default City;

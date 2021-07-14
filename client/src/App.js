@@ -14,7 +14,7 @@ const fetchDataTests = () => {
 
 // <button onClick={fetchDataTests}> Fetch data tests </button>
 
-// TO DO 
+// TO DO
 // extract the logic to put it into controllers/models
 // add Student.name in the h2 when connected - otw, display connexion form
 // populate City & Seats columns
@@ -24,7 +24,7 @@ class App extends Component {
 		return (
 			<div className="App">
 			<h1> ENM CITY ALLOCATOR</h1>
-        <div className="top"> <h2> Welcome! </h2>	</div> 
+        <div className="top"> <h2> Welcome! </h2>	</div>
         <LogInForm />
         <div className="bottom"> <CityList />	</div>
 			</div>
@@ -33,4 +33,3 @@ class App extends Component {
 }
 
 export default App;
-
