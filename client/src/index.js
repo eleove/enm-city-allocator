@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import '../../app/javascript/packs/*' --> Relative imports outside of src/ are not supported
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
