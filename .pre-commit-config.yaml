@@ -1,28 +1,17 @@
-# repos:
-#   - repo: git://github.com/pre-commit/pre-commit-hooks
-#     rev: v4.0.1
-#     hooks:
-#       - id: trailing-whitespace
-#         exclude: vendor/|.js.snap|.yml.enc
-#       - id: check-yaml
-#         exclude: spec/support/|.kubernetes|.drone.yml
-#       - id: end-of-file-fixer
-#         exclude: vendor/|.yml.enc
-#       - id: check-added-large-files
-#         args: [--maxkb=1024]
-#   - repo: git://github.com/mattlqx/pre-commit-ruby
-#     rev: v1.3.3
-#     hooks:
-#       - id: rubocop
-#         args: [-a, --force-exclusion]
-
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
     hooks:
-    -   id: check-yaml
-    -   id: trailing-whitespace
--   repo: https://github.com/psf/black
-    rev: 19.3b0
+      - id: trailing-whitespace
+        exclude: vendor/|.js.snap|.yml.enc
+      - id: check-yaml
+        exclude: spec/support/|.kubernetes|.drone.yml
+      - id: end-of-file-fixer
+        exclude: vendor/|.yml.enc
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+  - repo: git://github.com/mattlqx/pre-commit-ruby
+    rev: v1.3.3
     hooks:
-    -   id: black
+      - id: rubocop
+        args: [-a, --force-exclusion]

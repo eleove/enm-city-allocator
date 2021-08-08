@@ -1,22 +1,22 @@
-//import logo from './logo.svg';
-import React from 'react';
-import './App.css';
+import CityList from "./city_list";
+import "./App.css";
 
-const fetchDataTests = () => {
-  fetch('/api/v1/tests')
-  .then(res => res.json())
-  .then((response) => { console.log("Test data response", response); })
-  .catch((error) => { console.log("Error while fetching data tests", error); })
-}
+// TO DO
+// controllers & models
+// replace the App's 'name' props to the name of the current user. Otherwise, display connexion form.
 
-// <button onClick={fetchDataTests}> Fetch data tests </button>
-
-const App = () => {
-  return (
-    <div className="App">
-      <h1> ENM CITY ALLOCATOR </h1>
-    </div>
-  );
-}
+const App = (props) => {
+	return (
+		<div className="App">
+			<h1> ENM CITY ALLOCATOR</h1>
+			<div className="top">
+				<h2> Welcome {props.name}! </h2>
+			</div>
+			<div className="bottom">
+				<CityList />
+			</div>
+		</div>
+	);
+};
 
 export default App;
