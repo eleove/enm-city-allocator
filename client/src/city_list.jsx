@@ -1,22 +1,27 @@
-import React, { Component } from 'react';
-import './App.css';
-import City from './city.jsx'
+import { useEffect, useState } from "react";
+import City from "./city.jsx";
 
-class CityList extends Component {
-	render() {
-		 return (
-		 <div className="city-list">
+const CityList = () => {
+	const [data, setData] = useState([]);
+	useEffect(async () => {
+		fetch("/api/v1/cities") // add BACKEND_URL env variable?
+			.then((res) => res.json())
+			.then((data) => setData(data));
+	}, []);
+
+	return (
+		<div className="city-list">
 			<table className="city-table">
-			<tr>
-			    <th>City</th>
-			    <th>Available seats</th>
-			 </tr>
-			 	<City name="Lyon" nb_seats="4" />
-			 	<City name="Paris" nb_seats="6" />
-			 </table>
-    </div>
-	    )
-	}
-}
+				<tr>
+					<th>City</th>
+					<th>Available seats</th>
+				</tr>
+				{data.map((city) => (
+					<City name={city.name} nb_seats={city.nb_seats} />
+				))}
+			</table>
+		</div>
+	);
+};
 
 export default CityList;
