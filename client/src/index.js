@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import '../../app/javascript/packs/*' --> Relative imports outside of src/ are not supported
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+// TO DO
+// replace the App's props 'name' to the name of the current user. Otherwise, display connexion form
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name="Anna" />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
